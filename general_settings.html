@@ -1,0 +1,91 @@
+<!--Created by Yujie Cha & Bob Feng, 07/14/2016-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>General settings</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  	
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top " role="navigation" style="margin-bottom: 0">
+            <div class="container">
+			  <div class="navbar-collapse collapse">
+				<div class="row">
+					
+					<div class="col-md-7">
+						<ul class="nav navbar-nav">
+						  <li><a href="#">New Project</a></li>
+						  <li><a href="#">Active projects</a></li>
+						  <li><a href="#">Archived projects</a></li>
+						  <li class="active"><a href="#">Settings</a></li>
+						</ul>
+					</div>
+					<div class="col-md-5">
+						<div class="alert alert-success" role="alert">
+							<i>Noi project selected</i>
+						</div>
+					</div>
+				</div>
+			  </div>
+			  
+			</div>            
+        </nav>
+		<!-- End of Navigation -->
+        <div id="page-wrapper" class="no-margin">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3> Settings and administration </h3>
+					</div>
+				</div>
+				<div class="row break">
+					<div class="col-md-4">
+						<div class="panel panel-success">
+						  <!-- Default panel contents -->
+						  <div class="panel-heading">Available consultants</div>
+						  <!-- List group -->
+						  	<div class="list-group" id="consultantList">
+							  
+				  			</div>
+						</div>
+					</div>
+				</div>
+				<div class="break">
+					<div class="row">
+						<div class="col-md-5">
+							<a type="button" href="new_consultant.html" class="btn btn-success">Add new</a> 
+							<button type="button" class="btn btn-danger" id="deleteConsultant">Remove</button> 
+							<a type="button" href="consultant_detail.html" class="btn btn-primary">See details</a> 
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>    
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+</body>
+</html>

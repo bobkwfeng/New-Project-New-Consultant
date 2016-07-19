@@ -1,0 +1,180 @@
+
+<!--Created by Bob Feng, 07/14/2016-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./favicon.ico">
+
+    <title>New Consultant Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/jumbotron-narrow.css" rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+     <script src="./js/ie-emulation-modes-warning.js"></script>
+    <script src="js/main.js"></script>
+     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+     <!--[if lt IE 9]>
+    //   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    //   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    // <![endif]-->
+         <script type="text/javascript">
+    //     var url = "http://localhost:8080/NewtonSurvey/rest/addConsultant"
+    //     var whatToSend;
+
+    //     function TestJSON(){
+    //       console.log("hehe");
+    //       loadDoc(url, myFunction);
+    //     }
+
+    //     function loadDoc(url, cfunc) {
+    //       var xhttp;
+    //       xhttp = new XMLHttpRequest();
+    //       xhttp.open("POST", url, true);
+    //       xhttp.setRequestHeader('Content-Type', 'application/json');
+    //       xhttp.onreadystatechange = function() {
+    //          if (xhttp.readyState == 4 && xhttp.status == 200) {
+    //            cfunc(xhttp);
+    //          }
+    //       };
+    //       xhttp.send(whatToSend);
+    //     }
+
+    //     function myFunction(xhttp) {
+    //       console.log(xhttp.responseText);
+    //       var json = xhttp.responseText;
+    //       var objJSON = eval("(function(){return " + json + ";})()");
+    //       console.log("return!");
+    //       alert(objJSON.phoneNumber);
+    //       // document.getElementById("tJSON").innerHTML = xhttp.responseText;
+    //     }
+
+    //     function getContent() {
+    //       if (document.getElementById('password1').value != document.getElementById('password2').value) {
+    //         alert("Two Password Must Be Identical.");
+    //       } else {
+    //         var email = document.getElementById('email1').value;
+    //         var phoneNumber = document.getElementById('phoneNumber1').value;
+    //         var username = document.getElementById('username1').value;
+    //         var password = document.getElementById('password1').value;
+    //         whatToSend = '{"email":"' + email + '","passwordHash":"'+ password + '","phoneNumber":"' + phoneNumber + '","username":"' + username + '"}';
+    //         console.log(whatToSend);
+    //         TestJSON();
+    //       }  
+    //     }
+    // </script>
+
+     <script>
+    //   var qu;
+    //   function addQuestion() {
+    //     qu = document.getElementById('question').value;
+    //     var node = document.createElement("LI");
+    //     var textnode = document.createTextNode(qu);
+    //     node.appendChild(textnode);
+    //     document.getElementById("myList").appendChild(node);
+    //   }
+
+    // </script>
+
+    <style>
+      .input-group-addon {
+        min-width:150px;// if you want width please write here //
+        text-align:left;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Newton Consulting</h3>
+      </div>
+
+
+        <h1>Creat a New Consultant</h1>
+
+
+      <div class="row marketing">
+        <div class="col-lg-12">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1" width="50px">Email Address</span>
+            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id="email1">
+          </div>
+          <p></p>
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Phone Number</span>
+            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id="phoneNumber1">
+          </div>
+
+          <p></p>
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Username</span>
+            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id="username1">
+          </div>
+
+          <p></p>
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Password</span>
+            <input type="password" class="form-control" placeholder="" aria-describedby="basic-addon1" id="password1">
+          </div>
+
+          <p></p>
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Password Again</span>
+            <input type="password" class="form-control" placeholder="" aria-describedby="basic-addon1" id="password2">
+          </div>
+
+          <p></p>
+
+          <a class="btn btn-lg btn-success" href="#" role="button" align="center" id="createConsultant">Create</a>
+          <a class="btn btn-lg btn-success" href="general_settings.html" role="button" align="center">Go Back</a>
+        </div>
+      </div>
+
+      <!-- <ul id="myList">
+        <li>Q1</li>
+        <li>Q2</li>
+        </ul>
+      <input type="text" class="form-control" placeholder="New Question" aria-describedby="basic-addon1" id="question">
+      <a class="btn btn-lg btn-success" href="#" role="button" align="center" onclick = "addQuestion()">Add Question</a> -->
+
+
+      <footer class="footer">
+        <p>&copy; 2016 Ebiz, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

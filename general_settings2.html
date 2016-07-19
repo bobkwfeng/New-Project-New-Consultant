@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>General settings</title>
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet">
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+
+
+var url = "http://demo8633354.mockable.io/getAllConsultants";
+
+function getConsultantList() {
+    console.log("get the list of consultants");
+    loadDoc(url, myFunction);
+}
+
+function loadDoc(url, cfunc) {
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            cfunc(xhttp);
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+function myFunction(xhttp) {
+
+    // action listeners for mouse clicks
+    ul = document.getElementById('consultantList');
+    makeActive = function () {
+        for (var i = 0; i < ul.children.length; i++)
+            ul.children[i].classList.remove('active');
+        this.classList.add('active');
+    };
+
+    // parse the server's response to JSON format
+    var responseText = xhttp.responseText;
+    var jsonList = JSON.parse(responseText);
+
+    // create the consultant list
+    for (i = 0; i < jsonList.length; i++) {
+        var name = jsonList[i].name;
+        var userId = jsonList[i].userId;
+
+        var li = document.createElement("li");
+        li.className = "list-group-item";
+        li.appendChild(document.createTextNode(name));
+        li.setAttribute("userId", userId);
+        li.addEventListener('mousedown', makeActive);
+        ul.appendChild(li);
+    }          
+}
+
+function sendRemovedId(){
+    var items = document.getElementById('consultantList').children;
+
+    // find the user to be removed
+    for (i = 0; i < items.length; i++) {
+        if (items[i].classList.contains("active")) {
+            // get the associated user id
+            var IdToRemove = items[i].getAttribute("userId");
+            // physically remove the li node from ul
+            items[i].parentNode.removeChild(items[i]);
+            break;
+        }
+    }
+
+    // send the removed user id back to the server
+    if (IdToRemove) {
+        var xhttp;
+        params = "userId=" + IdToRemove + "&action=remove..."
+        xhttp = new XMLHttpRequest();
+        xhttp.open("POST", url, true);
+        xhttp.send(params);
+        window.alert(params)
+    }
+}
+
+</script>
+
+</head>
+<body onload = "getConsultantList()">
+<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top " role="navigation" style="margin-bottom: 0">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <div class="row">
+
+                    <div class="col-md-7">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">New Project</a></li>
+                            <li><a href="#">Active projects</a></li>
+                            <li><a href="#">Archived projects</a></li>
+                            <li class="active"><a href="#">Settings</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="alert alert-success" role="alert">
+                            <i>Noi project selected</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>            
+    </nav>
+    <!-- End of Navigation -->
+    <div id="page-wrapper" class="no-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3> Settings and Administration </h3>
+                </div>
+            </div>
+            <div class="row break">
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Available Consultants</div>
+                        <!-- List group -->
+                        <ul class="list-group" id = "consultantList">
+                            <!--
+                               -<li class="list-group-item">Joe Smith</li>
+                               -<li class="list-group-item active">Sally Jones</li>
+                               -<li class="list-group-item">Mark Miller</li>
+                               -<li class="list-group-item">Mary Parker</li>
+                               -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="break">
+                <div class="row">
+                    <div class="col-md-5">
+                        <a type="button" href="New Consultant.html" class="btn btn-success">Add new</a> 
+                        <button type="button" class="btn btn-danger" onclick="sendRemovedId()">Remove</button> 
+                        <button type="button" class="btn btn-primary">See details</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+
+</body>
+</html>
